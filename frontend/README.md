@@ -55,10 +55,10 @@ E     | Why should we hire you?
 
 The evaluation form for a coder is as below:
 ```
-Name:
-Date of Evaluation:
+Name: Nhan Vo
+Date of Evaluation: 19/05/2022
 
-Completeness of project (%):
+Completeness of project (%): 100%
 Bonus completeness (%):
 Overall Grade:
 
