@@ -1,5 +1,5 @@
-import { unTouchJokeState } from "features/Joke/recoil/jokeState";
-import { useRecoilValue } from "recoil";
+import { unTouchJokeState } from 'features/Joke/recoil/jokeState';
+import { useRecoilValue } from 'recoil';
 
 export default function Content() {
   const joke = useRecoilValue(unTouchJokeState);

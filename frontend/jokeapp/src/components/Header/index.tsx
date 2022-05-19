@@ -1,5 +1,5 @@
-import Avatar from "./Avatar";
-import Logo from "./Logo";
+import Avatar from './Avatar';
+import Logo from './Logo';
 
 export default function Header() {
   return (

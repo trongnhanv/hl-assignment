@@ -1,9 +1,9 @@
-import { atom, selector } from "recoil";
+import { atom, selector } from 'recoil';
 
 interface Joke {
   id: number;
   content: string;
-  status: "like" | "dislike" | null;
+  status: 'like' | 'dislike' | null;
 }
 
 export const defaultState: Joke[] = [
@@ -34,7 +34,7 @@ export const defaultState: Joke[] = [
 export const interactionJokes = (
   jokes: Joke[],
   jokeId: number,
-  status: "like" | "dislike"
+  status: 'like' | 'dislike'
 ): Joke[] => {
   const res = jokes.map((joke) => {
     const item = { ...joke };
@@ -47,12 +47,12 @@ export const interactionJokes = (
 };
 
 export const jokesListState = atom<Joke[]>({
-  key: "jokesList",
+  key: 'jokesList',
   default: defaultState,
 });
 
 export const unTouchJokeState = selector<Joke | null>({
-  key: "unTouchJoke",
+  key: 'unTouchJoke',
   get: ({ get }) => {
     const jokesList = get(jokesListState);
     return jokesList.filter((joke) => joke.status === null)[0] || null;
@@ -60,28 +60,28 @@ export const unTouchJokeState = selector<Joke | null>({
 });
 
 export const likeJokesListState = selector<Joke[] | number>({
-  key: "likeJokesList",
+  key: 'likeJokesList',
   get: ({ get }) =>
-    get(jokesListState).filter((joke) => joke.status === "like"),
+    get(jokesListState).filter((joke) => joke.status === 'like'),
   set: ({ get, set }, jokeId) => {
-    if (typeof jokeId === "number") {
+    if (typeof jokeId === 'number') {
       set(
         jokesListState,
-        interactionJokes(get(jokesListState), jokeId, "like")
+        interactionJokes(get(jokesListState), jokeId, 'like')
       );
     }
   },
 });
 
 export const dislikeJokesListState = selector<Joke[] | number>({
-  key: "dislikeJokesList",
+  key: 'dislikeJokesList',
   get: ({ get }) =>
-    get(jokesListState).filter((joke) => joke.status === "dislike"),
+    get(jokesListState).filter((joke) => joke.status === 'dislike'),
   set: ({ get, set }, jokeId) => {
-    if (typeof jokeId === "number") {
+    if (typeof jokeId === 'number') {
       set(
         jokesListState,
-        interactionJokes(get(jokesListState), jokeId, "dislike")
+        interactionJokes(get(jokesListState), jokeId, 'dislike')
       );
     }
   },

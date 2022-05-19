@@ -5,14 +5,16 @@ import Footer from 'components/Footer';
 import Main from 'features/Joke/pages/Main';
 
 function App() {
-  return <div className="app">
-    <Header />
-    <Cover />
-    <div className="main">
-      <Main />
+  return (
+    <div className="app">
+      <Header />
+      <Cover />
+      <div className="main">
+        <Main />
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
+  );
 }
 
 export default App;

@@ -2,8 +2,8 @@ import {
   dislikeJokesListState,
   likeJokesListState,
   unTouchJokeState,
-} from "features/Joke/recoil/jokeState";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+} from 'features/Joke/recoil/jokeState';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 export default function Action() {
   const unTouchJoke = useRecoilValue(unTouchJokeState);
